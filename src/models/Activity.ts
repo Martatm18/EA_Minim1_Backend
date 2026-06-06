@@ -126,6 +126,6 @@ const ActivitySchema: Schema = new Schema(
 );
 
 // Índice GeoEspecial 2dsphere para permitir búsquedas eficientes por cercanía en el mapa
-//ActivitySchema.index({ 'location.coordinates': '2dsphere' });
+ActivitySchema.index({ 'location.coordinates': '2dsphere' });
 
 export default mongoose.model<IActivityModel>('Activity', ActivitySchema);
