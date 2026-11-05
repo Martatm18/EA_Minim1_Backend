@@ -13,6 +13,7 @@ import authRoutes from './routes/Auth';
 import userRoutes from './routes/User';
 import activityRoutes from './routes/Activity';
 import reportRoutes from './routes/Report';
+import auditRoutes from './routes/Audit'; // Importem les rutes d'auditoria
 import { attachChat } from './services/ChatService';
 
 const router = express();
@@ -43,6 +44,7 @@ const StartServer = () => {
     router.use('/users', userRoutes);
     router.use('/activities', activityRoutes);
     router.use('/reports', reportRoutes);
+    router.use('/audits', auditRoutes); // Registrem l'endpoint /audits
     router.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
     /** Healthcheck */
